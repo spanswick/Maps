@@ -29,17 +29,35 @@
           zoom: 16, 
             mapId: '5cee256d0dad892b',
           mapTypeControlOptions: {
-            mapTypeIds: [
-              "roadmap",
-              "satellite",
-              "hybrid",
-              "terrain",
-              "styled_map",
-            ],
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.LEFT_BOTTOM,  
           },
+             zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM_CENTER,
+          },
+          scaleControl: true,
+          streetViewControl: false,
+          fullscreenControl: true,
+            fullscreenControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM_RIGHT,
+          },    
         });
-
       }
+      const styles = {
+        default: [],
+        hide: [
+          {
+            featureType: "poi.business",
+            stylers: [{ visibility: "off" }],
+          },
+          {
+            featureType: "transit",
+            elementType: "labels.icon",
+            stylers: [{ visibility: "off" }],
+          },
+        ],
+      };        
     </script>
   </head>
   <body>
